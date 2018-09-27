@@ -30,6 +30,7 @@
 #ifndef __USB_HID_CORE_H_
 #define __USB_HID_CORE_H_
 
+#include "platform.h"
 #include  "usbd_ioreq.h"
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -49,6 +50,7 @@
 #define USB_HID_DESC_SIZ              9
 
 #define HID_MOUSE_REPORT_DESC_SIZE    38
+#define HID_MOUSE_REPORT_DESC_SIZEU16 39
 
 #define HID_DESCRIPTOR_TYPE           0x21
 #define HID_REPORT_DESC               0x22

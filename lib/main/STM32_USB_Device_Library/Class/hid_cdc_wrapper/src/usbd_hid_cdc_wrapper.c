@@ -196,7 +196,11 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CDC_CfgDesc[USB_HID_CDC_CONFIG_DESC_SIZ] _
   0x00,         /*bCountryCode: Hardware target country*/
   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
   0x22,         /*bDescriptorType*/
+#ifdef HID_U16_REPORT
+  HID_MOUSE_REPORT_DESC_SIZEU16,/*wItemLength: Total length of Report descriptor*/
+#else
   HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+#endif
   0x00,
   /******************** Descriptor of Mouse endpoint ********************/
   /* 27 */
