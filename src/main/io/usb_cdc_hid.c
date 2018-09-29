@@ -67,17 +67,13 @@ const uint8_t hidChannelMapping[] = {
 void sendRcDataToHid(void)
 {
 #ifdef HID_U16_REPORT
-	int8_t report[16];
+	static uint8_t report[16];
     for (unsigned i = 0; i < USB_CDC_HID_NUM_AXES; i++) {
         const uint8_t channel = hidChannelMapping[i];
         const int16_t val = scaleRange(constrain(rcData[channel], PWM_RANGE_MIN, PWM_RANGE_MAX), PWM_RANGE_MIN, PWM_RANGE_MAX, USB_CDC_HID_RANGE_MIN, USB_CDC_HID_RANGE_MAX);
         report[2 * i] = val & 0xFF;
 		report[2 * i + 1] = val >> 8 & 0xFF;
-        if (i == 1) {
-            // For some reason ROLL is inverted in Windows
-            report[i] = -report[i];
         }
-    }
 #else
     int8_t report[8];
     for (unsigned i = 0; i < USB_CDC_HID_NUM_AXES; i++) {
