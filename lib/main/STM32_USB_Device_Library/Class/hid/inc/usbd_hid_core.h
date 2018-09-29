@@ -49,8 +49,11 @@
 #define USB_HID_CONFIG_DESC_SIZ       34
 #define USB_HID_DESC_SIZ              9
 
+#ifdef HID_U16_REPORT
+#define HID_MOUSE_REPORT_DESC_SIZE    39
+#else
 #define HID_MOUSE_REPORT_DESC_SIZE    38
-#define HID_MOUSE_REPORT_DESC_SIZEU16 39
+#endif
 
 #define HID_DESCRIPTOR_TYPE           0x21
 #define HID_REPORT_DESC               0x22
