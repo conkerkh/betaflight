@@ -50,7 +50,7 @@
 #define USB_HID_DESC_SIZ              9
 
 #ifdef HID_U16_REPORT
-#define HID_MOUSE_REPORT_DESC_SIZE    39
+#define HID_MOUSE_REPORT_DESC_SIZE    40
 #else
 #define HID_MOUSE_REPORT_DESC_SIZE    38
 #endif

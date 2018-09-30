@@ -249,15 +249,15 @@ __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE] __
 	    0x09, 0x31,                    //     USAGE (Y)
 	    0x09, 0x32,                    //     USAGE (Z)
 	    0x09, 0x33,                    //     USAGE (Rx)
-	    0x09, 0x35,                    //     USAGE (Rz)
 	    0x09, 0x34,                    //     USAGE (Ry)
+	    0x09, 0x35,                    //     USAGE (Rz)
 	    0x09, 0x40,                    //     USAGE (Vx)
 	    0x09, 0x38,                    //     USAGE (Wheel)
-	    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
-	    0x26, 0x00, 0x08,              //     LOGICAL_MAXIMUM (2048)
+	    0x16, 0x01, 0x80,              //     LOGICAL_MINIMUM (-32767)
+	    0x26, 0xff, 0x7f,              //     LOGICAL_MAXIMUM (32767)
 	    0x75, 0x10,                    //     REPORT_SIZE (16)
 	    0x95, 0x08,                    //     REPORT_COUNT (8)
-	    0x81, 0x02,                    //     INPUT (Data,Var,Abs)
+	    0x81, 0x02,                    //   INPUT (Data,Var,Abs)
 	    0xc0,                          //     END_COLLECTION
 	    0xc0                           // END_COLLECTION
 };
